@@ -60,5 +60,31 @@ public class Team {
         }
         return false;
     }
+
+    public String showTeamInfo() {
+        StringBuilder info = new StringBuilder("Team: " + name + "\n");
+
+        info.append("Goalkeepers:\n");
+        for (Goalkeeper gk : goalkeepers) {
+            if (gk != null) info.append(gk.showInfo()).append("\n");
+        }
+
+        info.append("Defenders:\n");
+        for (Defender df : defenders) {
+            if (df != null) info.append(df.showInfo()).append("\n");
+        }
+
+        info.append("Midfielders:\n");
+        for (Midfielder mf : midfielders) {
+            if (mf != null) info.append(mf.showInfo()).append("\n");
+        }
+
+        info.append("Forwards:\n");
+        for (Forward fw : forwards) {
+            if (fw != null) info.append(fw.showInfo()).append("\n");
+        }
+
+        return info.toString();
+    }
     
 }
